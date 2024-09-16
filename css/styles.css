@@ -1,0 +1,223 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Navigation Bar */
+.navbar {
+    width: 100%;
+    background-color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-weight: 400;
+    font-size: 24px;
+    padding-left: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    margin: 0 15px;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.navbar-links li a:hover {
+    color: #69b3a2;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Main Section */
+.main-section {
+    margin-top: -400px; /* Adjusted from 100px to move content higher */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 60px); /* Adjusted to reflect the smaller margin */
+    text-align: left;
+    position: relative; /* Added to position the page break correctly */
+    margin-bottom: -10px; /* Reduced margin between section and page break */
+    padding-bottom: 0; /* Remove any extra padding */
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    width: 95%;
+    gap: 0px; /* Eliminated the gap between the image and text */
+}
+
+.profile-image {
+    flex: 1;
+    margin-right: -20px; /* Further reduced margin to bring the image and text closer */
+    padding-left: 100px; /* Keeps the image in its current position */
+}
+
+.profile-image img {
+    width: 340px; /* Image size remains the same */
+    height: auto;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+
+.description {
+    flex: 1;
+}
+
+.description p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Social Buttons */
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.social-buttons a {
+    text-decoration: none;
+    color: #69b3a2; /* Set initial text color */
+    background-color: white; /* White background initially */
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: 2px solid #69b3a2; /* Border color to match button */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-linkedin {
+    background-color: #0077B5;
+}
+
+.btn-github {
+    background-color: #333;
+}
+
+.btn-contact {
+    background-color: #69b3a2;
+}
+
+.social-buttons a:hover {
+    background-color: #4a9b85; /* Hover effect for all buttons */
+}
+
+/* Hover effect for all buttons */
+.social-buttons a:hover {
+    color: white; /* Change text to white on hover */
+    background-color: #69b3a2; /* Revert to the original background color */
+}
+
+.btn-github:hover {
+    background-color: #1a1a1a;
+}
+
+.btn-contact:hover {
+    background-color: #4a9b85;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-image {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 0;
+    }
+
+    .navbar-links li {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .navbar-links li a {
+        font-size: 18px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
